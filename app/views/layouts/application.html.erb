@@ -3,12 +3,32 @@
 <head>
   <title>ProbablyTweeting</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+		<div id="wrapper">
+			<div class="header">
+				<h1>Probably Tweeting</h1>
+			</div>
+		<div class="row">
+			<div id="main_content" class="span8">
+				<!-- Search -->
+				<form class="form-search">
+					<p class="lead">Enter a Twitter handle to see if that user is currently tweeting!</p>
+				  <input id="search_handle" type="text" class="input-medium search-query" value="@cyruskazemi">
+				  <button id="submit" type="submit" class="btn btn-primary">Tweeting?</button>
+				</form>
+				<!-- Search result -->
+				<div id="results">
+				</div>
+				<!--  -->
+			</div>
+			<div id="aside" class="span4">
+				<h3><em>Did you know?</em></h3>
+				<p>Users spend an average of <a href="http://www.mediabistro.com/alltwitter/social-media-minutes_b19034">21 minutes per visit</a> on Twitter</p>
+			</div>
+		</div>
+</div>
+		<%= javascript_include_tag "application" %>
+  </body>
 </html>
