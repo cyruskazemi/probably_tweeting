@@ -23,13 +23,6 @@ PROBABLYTWEETING = {
 		});
 	},
 	load_success: function(twitter_user){		
-		// Check if there is a tweet
-//		if(twitter_user["id"] && twitter_user["status"]["id_str"]){
-			// get profile picture
-			
-			// get last tweet text
-			// get last tweet time
-		
 			// Check tweet time against current time
 			var MAX_TIME_DIFFERENCE = 10;
 			var time_of_last_tweet = new Date(twitter_user["status"]["created_at"]);
@@ -37,7 +30,6 @@ PROBABLYTWEETING = {
 			var time_difference_in_mins = Math.floor((time_now - time_of_last_tweet) / (60 * 1000));
 			var is_tweeting = (time_difference_in_mins < MAX_TIME_DIFFERENCE) ? " is probably tweeting! :)" : " is probably not tweeting :(";
 			var context_class = (time_difference_in_mins < MAX_TIME_DIFFERENCE) ? "success" : "error";
-			// If there is a previous lookup, move reults to Previous area
 			
 			// Populate look up area
 			var result_string = '<div class="result ' + context_class + '"><p class="lead"><img src="' + 
@@ -45,11 +37,6 @@ PROBABLYTWEETING = {
 													twitter_user["name"] + is_tweeting + '</p><span class="tweet_text"><em>"' + twitter_user["status"]["text"] + '"</em> ' +
 													time_difference_in_mins + ' min ago</span></div>';
 			$(result_string).hide().prependTo('#results').fadeIn('slow');
-			
-		//} else {
-			// Error message
-		//}
-		
 	}
 }
 

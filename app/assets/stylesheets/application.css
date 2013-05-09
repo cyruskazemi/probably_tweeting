@@ -123,3 +123,9 @@
 			text-align: center;
 		}
 	}
+	
+	@media (max-width: 640px) {
+		h1 {
+			
+		}
+	}
